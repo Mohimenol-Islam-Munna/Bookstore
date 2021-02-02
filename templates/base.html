@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}Document{% endblock title %}
+    </title>
+</head>
+<body>
+    <!-- header section  -->
+    <header>
+        <h1>This is header</h1>
+    </header>
+    <!-- end header section -->
+
+
+    <!-- main content section  -->
+    <main>
+        {% block content  %}
+        
+        {% endblock content %}
+    </main>
+    <!-- end main content section  -->
+
+
+    <!-- footer section  -->
+    <footer>
+        <h4>This is Footer</h4>
+    </footer>
+    <!-- end footer section  -->
+</body>
+</html>
