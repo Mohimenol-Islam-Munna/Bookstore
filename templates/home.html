@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock title %}
 
 {% block content %}
     <div>
         <h3>This Home Page</h3>
         <div>
+            <div>
+                <img class="bookcover" src="{% static 'images/django.jpg' %}" alt="Djano Images">
+            </div>
             {% if user.is_authenticated %}
                 <div>
                     <h2>Hi {{ user.username }}</h2>
