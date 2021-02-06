@@ -23,7 +23,7 @@ class HomepageTests(SimpleTestCase):
 
 
     def test_homepage_contains_correct_html(self):
-        self.assertContains(self.response, 'This Home Page')
+        self.assertContains(self.response, 'This is Home Page')
 
 
     def test_homepage_does_not_contain_incorrect_html(self):

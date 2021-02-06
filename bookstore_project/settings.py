@@ -33,10 +33,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
 
     #local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +143,8 @@ ACCOUNT_LOGOUT_REDIRECT = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+
 #django_allauth_config
 
 SITE_ID = 1
@@ -147,13 +152,17 @@ SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
     
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend', # new
+    'allauth.account.auth_backends.AuthenticationBackend', 
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+DEFAULT_FROM_EMAIL = 'mohimenolmunna@gmail.com'
